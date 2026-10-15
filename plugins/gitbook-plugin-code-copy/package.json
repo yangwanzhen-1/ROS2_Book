@@ -1,0 +1,10 @@
+{
+  "name": "gitbook-plugin-code-copy",
+  "version": "1.0.0",
+  "description": "Add copy buttons to GitBook code blocks.",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "gitbook": ">=3.0.0"
+  }
+}

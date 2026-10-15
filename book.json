@@ -1,0 +1,12 @@
+{
+  "title": "ROS2笔记",
+  "author": "wanzhen.yang",
+  "description": "ROS 2 与 Navigation2 学习笔记",
+  "language": "zh-hans",
+  "root": "./src",
+  "plugins": [
+    "expandable-chapters",
+    "file-navigation",
+    "code-copy"
+  ]
+}

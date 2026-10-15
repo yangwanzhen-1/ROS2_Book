@@ -1,0 +1,10 @@
+{
+  "name": "gitbook-plugin-file-navigation",
+  "version": "1.0.0",
+  "description": "Enable normal chapter navigation when a GitBook is opened with file://.",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "gitbook": ">=3.0.0"
+  }
+}

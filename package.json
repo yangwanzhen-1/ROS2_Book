@@ -1,0 +1,10 @@
+{
+  "name": "ros2-book",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "gitbook-plugin-code-copy": "file:plugins/gitbook-plugin-code-copy",
+    "gitbook-plugin-expandable-chapters": "0.2.0",
+    "gitbook-plugin-file-navigation": "file:plugins/gitbook-plugin-file-navigation"
+  }
+}
