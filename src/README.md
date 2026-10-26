@@ -11,7 +11,7 @@
 ## 内容目录
 
 1. [ROS 2 基础](./01_ROS2基础/README.md)
-2. [生命周期节点](./02_生命周期节点/README.md)
+2. [生命周期节点](./02_生命周期节点/生命周期节点.md)
 3. [Navigation2](./03_Navigation2/README.md)
 4. [Costmap2D](./04_Costmap2D/README.md)
 5. [Planner Server](./05_PlannerServer/README.md)

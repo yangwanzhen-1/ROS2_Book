@@ -6,6 +6,14 @@
   }
 
   document.addEventListener("click", function (event) {
+    if (
+      event.target &&
+      event.target.classList &&
+      event.target.classList.contains("exc-trigger")
+    ) {
+      return;
+    }
+
     var link = event.target;
 
     while (link && link.tagName !== "A") {

@@ -136,9 +136,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="02_生命周期节点/">
+        <li class="chapter " data-level="1.4" data-path="02_生命周期节点/生命周期节点.html">
             
-                <a href="02_生命周期节点/">
+                <a href="02_生命周期节点/生命周期节点.html">
             
                     
                     02 生命周期节点
@@ -146,6 +146,70 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="02_生命周期节点/生命周期节点.html">
+            
+                <a href="02_生命周期节点/生命周期节点.html#1-简介">
+            
+                    
+                    1. 简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="02_生命周期节点/生命周期节点.html">
+            
+                <a href="02_生命周期节点/生命周期节点.html#场景">
+            
+                    
+                    场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="02_生命周期节点/生命周期节点.html">
+            
+                <a href="02_生命周期节点/生命周期节点.html#概念">
+            
+                    
+                    概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="02_生命周期节点/生命周期节点.html">
+            
+                <a href="02_生命周期节点/生命周期节点.html#作用">
+            
+                    
+                    作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -247,63 +311,118 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6307;&#x5BFC;&#x624B;&#x518C;">&#x6307;&#x5BFC;&#x624B;&#x518C;</h1>
-<p>&#x672C;&#x624B;&#x518C;&#x7528;&#x4E8E;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x8FD9;&#x672C; ROS 2 &#x7B14;&#x8BB0;&#x3002;</p>
+<p>&#x672C;&#x624B;&#x518C;&#x7528;&#x4E8E;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x7EF4;&#x62A4;&#x3001;&#x6784;&#x5EFA;&#x548C;&#x53D1;&#x5E03;&#x8FD9;&#x672C; ROS 2 &#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x3002;</p>
 <h2 id="&#x9879;&#x76EE;&#x7ED3;&#x6784;">&#x9879;&#x76EE;&#x7ED3;&#x6784;</h2>
 <pre><code class="lang-text">ROS2_Book/
-&#x251C;&#x2500;&#x2500; .nvmrc           # Node.js &#x7248;&#x672C;
-&#x251C;&#x2500;&#x2500; book.json        # GitBook &#x914D;&#x7F6E;
-&#x251C;&#x2500;&#x2500; src/             # Markdown &#x6E90;&#x6587;&#x4EF6;
-&#x2502;   &#x251C;&#x2500;&#x2500; SUMMARY.md   # &#x4E66;&#x7C4D;&#x76EE;&#x5F55;
-&#x2502;   &#x2514;&#x2500;&#x2500; *.md         # &#x5404;&#x7AE0;&#x8282;&#x5185;&#x5BB9;
-&#x2514;&#x2500;&#x2500; _book/           # &#x6784;&#x5EFA;&#x751F;&#x6210;&#x7684;&#x7F51;&#x7AD9;&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; README.md          # GitHub &#x4ED3;&#x5E93;&#x9996;&#x9875;&#x8BF4;&#x660E;
+&#x251C;&#x2500;&#x2500; .nvmrc             # Node.js &#x7248;&#x672C;&#xFF08;10.24.1&#xFF09;
+&#x251C;&#x2500;&#x2500; book.json          # GitBook &#x914D;&#x7F6E;
+&#x251C;&#x2500;&#x2500; package.json       # GitBook &#x63D2;&#x4EF6;&#x4F9D;&#x8D56;
+&#x251C;&#x2500;&#x2500; package-lock.json  # &#x63D2;&#x4EF6;&#x7684;&#x7CBE;&#x786E;&#x7248;&#x672C;&#x8BB0;&#x5F55;
+&#x251C;&#x2500;&#x2500; build_book.sh      # &#x4E66;&#x7C4D;&#x6784;&#x5EFA;&#x811A;&#x672C;
+&#x251C;&#x2500;&#x2500; plugins/           # &#x9879;&#x76EE;&#x81EA;&#x5E26;&#x7684;&#x672C;&#x5730;&#x63D2;&#x4EF6;
+&#x251C;&#x2500;&#x2500; src/               # Markdown &#x6E90;&#x6587;&#x4EF6;&#x548C;&#x56FE;&#x7247;
+&#x2502;   &#x251C;&#x2500;&#x2500; README.md      # &#x4E66;&#x7C4D;&#x9996;&#x9875;
+&#x2502;   &#x251C;&#x2500;&#x2500; SUMMARY.md     # &#x5DE6;&#x4FA7;&#x7AE0;&#x8282;&#x76EE;&#x5F55;
+&#x2502;   &#x2514;&#x2500;&#x2500; &#x5404;&#x7AE0;&#x8282;&#x76EE;&#x5F55;/
+&#x251C;&#x2500;&#x2500; docs/              # &#x6784;&#x5EFA;&#x751F;&#x6210;&#x7684;&#x7F51;&#x9875;&#xFF0C;&#x4F9B; GitHub Pages &#x53D1;&#x5E03;
+&#x2514;&#x2500;&#x2500; node_modules/      # &#x672C;&#x673A;&#x5B89;&#x88C5;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4E0D;&#x63D0;&#x4EA4;&#x5230; Git
 </code></pre>
-<p>&#x5E73;&#x65F6;&#x53EA;&#x9700;&#x8981;&#x7F16;&#x8F91; <code>src</code> &#x76EE;&#x5F55;&#x3002;<code>_book</code> &#x76EE;&#x5F55;&#x7531; GitBook &#x81EA;&#x52A8;&#x751F;&#x6210;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x3002;</p>
-<h2 id="&#x6DFB;&#x52A0;&#x65B0;&#x7AE0;&#x8282;">&#x6DFB;&#x52A0;&#x65B0;&#x7AE0;&#x8282;</h2>
-<p>&#x9996;&#x5148;&#x5728; <code>src</code> &#x76EE;&#x5F55;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Markdown &#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-text">src/ros2_node.md
+<p>&#x5E73;&#x65F6;&#x4E3B;&#x8981;&#x7F16;&#x8F91; <code>src/</code> &#x4E2D;&#x7684; Markdown &#x548C;&#x56FE;&#x7247;&#x3002;<code>docs/</code> &#x7531;&#x6784;&#x5EFA;&#x811A;&#x672C;&#x81EA;&#x52A8;&#x751F;&#x6210;&#xFF0C;
+&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x5176;&#x4E2D;&#x7684; HTML&#xFF0C;&#x5426;&#x5219;&#x4E0B;&#x6B21;&#x6784;&#x5EFA;&#x65F6;&#x4F1A;&#x88AB;&#x8986;&#x76D6;&#x3002;</p>
+<p><code>_book/</code> &#x662F; GitBook &#x7684;&#x9ED8;&#x8BA4;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF0C;&#x672C;&#x9879;&#x76EE;&#x5DF2;&#x7ECF;&#x7EDF;&#x4E00;&#x4F7F;&#x7528; <code>docs/</code>&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x518D;&#x4F7F;&#x7528;
+<code>_book/</code>&#x3002;</p>
+<h2 id="&#x6DFB;&#x52A0;&#x6216;&#x4FEE;&#x6539;&#x7AE0;&#x8282;">&#x6DFB;&#x52A0;&#x6216;&#x4FEE;&#x6539;&#x7AE0;&#x8282;</h2>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x7AE0;&#x8282;&#x76EE;&#x5F55;&#x4E2D;&#x521B;&#x5EFA; Markdown &#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-text">src/02_&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;/&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;.md
 </code></pre>
-<p>&#x7136;&#x540E;&#x7F16;&#x5199;&#x7AE0;&#x8282;&#x5185;&#x5BB9;&#xFF1A;</p>
-<pre><code class="lang-markdown"><span class="hljs-section"># ROS 2 &#x8282;&#x70B9;</span>
-
-&#x8FD9;&#x91CC;&#x8BB0;&#x5F55; ROS 2 &#x8282;&#x70B9;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x3002;
-
-<span class="hljs-code">```</span>cpp
-auto node = std::make<span class="hljs-emphasis">_shared&lt;rclcpp::Node&gt;(&quot;demo_</span>node&quot;);
-<span class="hljs-code">```</span>
+<p>&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728; <code>src/SUMMARY.md</code> &#x4E2D;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x76EE;&#x5F55;&#x9879;&#xFF1A;</p>
+<pre><code class="lang-markdown"><span class="hljs-bullet">- </span>[<span class="hljs-string">02 &#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;</span>](<span class="hljs-link">./02_&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;/&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;.md</span>)
 </code></pre>
-<p>&#x6700;&#x540E;&#x5728; <code>src/SUMMARY.md</code> &#x4E2D;&#x6DFB;&#x52A0;&#x76EE;&#x5F55;&#x9879;&#xFF1A;</p>
-<pre><code class="lang-markdown"><span class="hljs-bullet">- </span>[<span class="hljs-string">ROS 2 &#x8282;&#x70B9;</span>](<span class="hljs-link">./ros2_node.md</span>)
+<p>&#x53EA;&#x6709;&#x5199;&#x5165; <code>SUMMARY.md</code> &#x7684; Markdown &#x6587;&#x4EF6;&#xFF0C;&#x624D;&#x4F1A;&#x88AB; GitBook &#x52A0;&#x5165;&#x5DE6;&#x4FA7;&#x76EE;&#x5F55;&#x5E76;&#x751F;&#x6210;&#x7F51;&#x9875;&#x3002;</p>
+<h3 id="&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4FA7;&#x8FB9;&#x6807;&#x9898;&#x76EE;&#x5F55;">&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4FA7;&#x8FB9;&#x6807;&#x9898;&#x76EE;&#x5F55;</h3>
+<p>&#x5982;&#x679C;&#x5E0C;&#x671B;&#x5DE6;&#x4FA7;&#x76EE;&#x5F55;&#x81EA;&#x52A8;&#x663E;&#x793A;&#x67D0;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x4E8C;&#x7EA7;&#x3001;&#x4E09;&#x7EA7;&#x548C;&#x56DB;&#x7EA7;&#x6807;&#x9898;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x8BE5;&#x9875;&#x9762;&#x7684;
+<code>SUMMARY.md</code> &#x6761;&#x76EE;&#x540E;&#x6DFB;&#x52A0; <code>&lt;!-- AUTO_TOC --&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-markdown"><span class="hljs-bullet">- </span>[<span class="hljs-string">02 &#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;</span>](<span class="hljs-link">./02_&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;/&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;.md</span>) <span class="xml"><span class="hljs-comment">&lt;!-- AUTO_TOC --&gt;</span></span>
 </code></pre>
-<p>&#x53EA;&#x6709;&#x6DFB;&#x52A0;&#x5230; <code>SUMMARY.md</code> &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x624D;&#x4F1A;&#x663E;&#x793A;&#x5728;&#x4E66;&#x7C4D;&#x76EE;&#x5F55;&#x91CC;&#x3002;</p>
-<h2 id="&#x6DFB;&#x52A0;&#x591A;&#x7EA7;&#x76EE;&#x5F55;">&#x6DFB;&#x52A0;&#x591A;&#x7EA7;&#x76EE;&#x5F55;</h2>
-<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7F29;&#x8FDB;&#x7EC4;&#x7EC7;&#x7AE0;&#x8282;&#xFF1A;</p>
-<pre><code class="lang-markdown"><span class="hljs-bullet">- </span>[<span class="hljs-string">ROS 2 &#x57FA;&#x7840;</span>](<span class="hljs-link">./basics.md</span>)
-  - [<span class="hljs-string">&#x8282;&#x70B9;</span>](<span class="hljs-link">./basics/node.md</span>)
-  - [<span class="hljs-string">&#x8BDD;&#x9898;</span>](<span class="hljs-link">./basics/topic.md</span>)
-  - [<span class="hljs-string">&#x670D;&#x52A1;</span>](<span class="hljs-link">./basics/service.md</span>)
+<p>&#x8FD0;&#x884C; <code>./build_book.sh</code> &#x65F6;&#xFF0C;<code>scripts/generate_sidebar_toc.js</code> &#x4F1A;&#x626B;&#x63CF;&#x8BE5; Markdown &#x6587;&#x4EF6;&#x7684;
+<code>##</code>&#x3001;<code>###</code> &#x548C; <code>####</code> &#x6807;&#x9898;&#xFF0C;&#x5E76;&#x5728; <code>SUMMARY.md</code> &#x4E2D;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x53EF;&#x6298;&#x53E0;&#x7684;&#x591A;&#x7EA7;&#x76EE;&#x5F55;&#x548C;&#x6807;&#x9898;
+&#x8DF3;&#x8F6C;&#x94FE;&#x63A5;&#x3002;</p>
+<p>&#x811A;&#x672C;&#x751F;&#x6210;&#x7684;&#x5185;&#x5BB9;&#x4F4D;&#x4E8E; <code>AUTO_TOC_START</code> &#x548C; <code>AUTO_TOC_END</code> &#x6807;&#x8BB0;&#x4E4B;&#x95F4;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x3002;
+&#x6807;&#x9898;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x540E;&#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x6784;&#x5EFA;&#x811A;&#x672C;&#xFF0C;&#x4FA7;&#x8FB9;&#x76EE;&#x5F55;&#x4F1A;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x591A;&#x7EA7;&#x76EE;&#x5F55;&#x4F7F;&#x7528;&#x7F29;&#x8FDB;&#x8868;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-markdown"><span class="hljs-bullet">- </span>[<span class="hljs-string">Navigation2</span>](<span class="hljs-link">./03_Navigation2/README.md</span>)
+  - [<span class="hljs-string">&#x89C4;&#x5212;&#x5668;</span>](<span class="hljs-link">./03_Navigation2/planner.md</span>)
+  - [<span class="hljs-string">&#x63A7;&#x5236;&#x5668;</span>](<span class="hljs-link">./03_Navigation2/controller.md</span>)
 </code></pre>
-<p>&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x7ED3;&#x6784;&#x4E3A;&#xFF1A;</p>
-<pre><code class="lang-text">src/
-&#x251C;&#x2500;&#x2500; basics.md
-&#x2514;&#x2500;&#x2500; basics/
-    &#x251C;&#x2500;&#x2500; node.md
-    &#x251C;&#x2500;&#x2500; topic.md
-    &#x2514;&#x2500;&#x2500; service.md
+<h2 id="&#x6DFB;&#x52A0;&#x56FE;&#x7247;">&#x6DFB;&#x52A0;&#x56FE;&#x7247;</h2>
+<p>&#x5EFA;&#x8BAE;&#x5728;&#x6BCF;&#x4E2A;&#x7AE0;&#x8282;&#x76EE;&#x5F55;&#x4E2D;&#x4FDD;&#x7559;&#x81EA;&#x5DF1;&#x7684; <code>image/</code> &#x6587;&#x4EF6;&#x5939;&#xFF1A;</p>
+<pre><code class="lang-text">src/02_&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;/
+&#x251C;&#x2500;&#x2500; &#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;.md
+&#x2514;&#x2500;&#x2500; image/
+    &#x2514;&#x2500;&#x2500; lifecycle.png
 </code></pre>
-<h2 id="&#x672C;&#x5730;&#x9884;&#x89C8;">&#x672C;&#x5730;&#x9884;&#x89C8;</h2>
-<p>&#x5728; <code>ROS2_Book</code> &#x76EE;&#x5F55;&#x4E2D;&#x6267;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-bash">nvm use
+<p>&#x5728;&#x540C;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;&#x7684; Markdown &#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-markdown">![<span class="hljs-string">&#x751F;&#x547D;&#x5468;&#x671F;&#x8282;&#x70B9;</span>](<span class="hljs-link">./image/lifecycle.png</span>)
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5728; Typora&#x3001;&#x672C;&#x5730;&#x751F;&#x6210;&#x7684;&#x7F51;&#x9875;&#x548C; GitHub Pages &#x4E2D;&#x90FD;&#x80FD;&#x6B63;&#x786E;&#x663E;&#x793A;&#x56FE;&#x7247;&#x3002;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x4E5F;&#x8981;&#x548C;
+Markdown &#x4E00;&#x8D77;&#x63D0;&#x4EA4;&#x5230; Git&#x3002;</p>
+<h2 id="&#x6784;&#x5EFA;&#x4E66;&#x7C4D;">&#x6784;&#x5EFA;&#x4E66;&#x7C4D;</h2>
+<p>&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> /home/y/docker_ws/aros2_sim/ROS2_Book
+./build_book.sh
+</code></pre>
+<p>&#x811A;&#x672C;&#x4F1A;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-bash">nvm use 10.24.1
+gitbook build . docs
+touch docs/.nojekyll
+</code></pre>
+<p>&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x7F51;&#x9875;&#x4F4D;&#x4E8E;&#xFF1A;</p>
+<pre><code class="lang-text">docs/index.html
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x6253;&#x5F00;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-text">file:///home/y/docker_ws/aros2_sim/ROS2_Book/docs/index.html
+</code></pre>
+<h2 id="&#x542F;&#x52A8;&#x672C;&#x5730;&#x9884;&#x89C8;&#x670D;&#x52A1;">&#x542F;&#x52A8;&#x672C;&#x5730;&#x9884;&#x89C8;&#x670D;&#x52A1;</h2>
+<p>&#x9700;&#x8981;&#x901A;&#x8FC7; HTTP &#x9884;&#x89C8;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> /home/y/docker_ws/aros2_sim/ROS2_Book
+nvm use
 gitbook serve
 </code></pre>
-<p>&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE; <code>http://localhost:4000</code>&#x3002;&#x4FEE;&#x6539; Markdown &#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x9875;&#x9762;&#x901A;&#x5E38;&#x4F1A;&#x81EA;&#x52A8;&#x5237;&#x65B0;&#x3002;</p>
-<h2 id="&#x6784;&#x5EFA;&#x4E66;&#x7C4D;">&#x6784;&#x5EFA;&#x4E66;&#x7C4D;</h2>
-<p>&#x6267;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-bash">nvm use
-gitbook build
+<p>&#x7136;&#x540E;&#x8BBF;&#x95EE;&#xFF1A;</p>
+<pre><code class="lang-text">http://localhost:4000
 </code></pre>
-<p>&#x751F;&#x6210;&#x7684;&#x7F51;&#x7AD9;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5728; <code>_book</code> &#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
-<p>&#x6784;&#x5EFA;&#x7ED3;&#x679C;&#x4E5F;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x6253;&#x5F00; <code>_book/index.html</code>&#x3002;&#x9879;&#x76EE;&#x4E2D;&#x7684; <code>file-navigation</code> &#x672C;&#x5730;&#x63D2;&#x4EF6;&#x4F1A;&#x5728;
-<code>file://</code> &#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#xFF0C;&#x907F;&#x514D;&#x6D4F;&#x89C8;&#x5668;&#x62E6;&#x622A; GitBook &#x7684; AJAX &#x7AE0;&#x8282;&#x52A0;&#x8F7D;&#x3002;</p>
+<p><code>gitbook serve</code> &#x53EF;&#x80FD;&#x91CD;&#x65B0;&#x751F;&#x6210; <code>_book/</code>&#xFF0C;&#x5B83;&#x53EA;&#x7528;&#x4E8E;&#x672C;&#x5730;&#x9884;&#x89C8;&#xFF1B;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#x4ECD;&#x7136;&#x4F7F;&#x7528;
+<code>build_book.sh</code> &#x751F;&#x6210;&#x7684; <code>docs/</code>&#x3002;</p>
+<h2 id="&#x53D1;&#x5E03;&#x5230;-github-pages">&#x53D1;&#x5E03;&#x5230; GitHub Pages</h2>
+<p>&#x4FEE;&#x6539;&#x6E90;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x6309;&#x7167;&#x4EE5;&#x4E0B;&#x987A;&#x5E8F;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> /home/y/docker_ws/aros2_sim/ROS2_Book
+
+./build_book.sh
+
+git add .
+git commit -m <span class="hljs-string">&quot;&#x66F4;&#x65B0;&#x4E66;&#x7C4D;&#x5185;&#x5BB9;&quot;</span>
+git push
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>build_book.sh</code> &#x5728;&#x672C;&#x673A;&#x628A; Markdown &#x6784;&#x5EFA;&#x6210; <code>docs/</code> &#x7F51;&#x9875;&#x3002;</li>
+<li><code>git push</code> &#x628A;&#x6E90;&#x6587;&#x4EF6;&#x548C;&#x7F51;&#x9875;&#x4E0A;&#x4F20;&#x5230; GitHub&#x3002;</li>
+<li>GitHub Pages &#x81EA;&#x52A8;&#x53D1;&#x5E03; <code>main</code> &#x5206;&#x652F;&#x4E2D;&#x7684; <code>/docs</code> &#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+<p>&#x5728;&#x7EBF;&#x9605;&#x8BFB;&#x5730;&#x5740;&#xFF1A;</p>
+<p><a href="https://yangwanzhen-1.github.io/ROS2_Book/" target="_blank">https://yangwanzhen-1.github.io/ROS2_Book/</a></p>
+<p>&#x9879;&#x76EE;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF1A;</p>
+<p><a href="https://github.com/yangwanzhen-1/ROS2_Book" target="_blank">https://github.com/yangwanzhen-1/ROS2_Book</a></p>
+<h2 id="&#x5728;&#x65B0;&#x7535;&#x8111;&#x4E0A;&#x6062;&#x590D;&#x73AF;&#x5883;">&#x5728;&#x65B0;&#x7535;&#x8111;&#x4E0A;&#x6062;&#x590D;&#x73AF;&#x5883;</h2>
+<p><code>node_modules/</code> &#x4E0D;&#x4F1A;&#x63A8;&#x9001;&#x5230; GitHub&#x3002;&#x514B;&#x9686;&#x9879;&#x76EE;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> ROS2_Book
+nvm use 10.24.1
+npm install
+./build_book.sh
+</code></pre>
+<p><code>package.json</code> &#x548C; <code>package-lock.json</code> &#x4F1A;&#x8BB0;&#x5F55;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x4EA4;
+<code>node_modules/</code>&#x3002;</p>
 <h2 id="&#x5E38;&#x7528;-markdown-&#x8BED;&#x6CD5;">&#x5E38;&#x7528; Markdown &#x8BED;&#x6CD5;</h2>
 <pre><code class="lang-markdown"><span class="hljs-section"># &#x4E00;&#x7EA7;&#x6807;&#x9898;</span>
 <span class="hljs-section">## &#x4E8C;&#x7EA7;&#x6807;&#x9898;</span>
@@ -322,34 +441,26 @@ gitbook build
 
 <span class="hljs-code">`&#x884C;&#x5185;&#x4EE3;&#x7801;`</span>
 </code></pre>
-<p>&#x63D2;&#x5165;&#x4EE3;&#x7801;&#x5757;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6807;&#x6CE8;&#x4EE3;&#x7801;&#x8BED;&#x8A00;&#x4EE5;&#x542F;&#x7528;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#xFF1A;</p>
+<p>&#x4EE3;&#x7801;&#x5757;&#x53EF;&#x4EE5;&#x6807;&#x6CE8;&#x8BED;&#x8A00;&#xFF0C;&#x4EE5;&#x542F;&#x7528;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#xFF1A;</p>
 <pre><code class="lang-markdown"><span class="hljs-code">```</span>cpp
-<span class="hljs-section">#include &lt;iostream&gt;</span>
+<span class="hljs-section">#include &lt;memory&gt;</span>
 
-int main()
+<span class="hljs-section">#include &quot;nav2_lifecycle_manager/lifecycle_manager.hpp&quot;</span>
+<span class="hljs-section">#include &quot;rclcpp/rclcpp.hpp&quot;</span>
+
+int main(int argc, char ** argv)
 {
-  std::cout <span class="xml"><span class="hljs-tag">&lt;&lt; &quot;<span class="hljs-attr">Hello</span>, <span class="hljs-attr">ROS</span> <span class="hljs-attr">2</span>!&quot; &lt;&lt; <span class="hljs-attr">std::endl</span>;
-  <span class="hljs-attr">return</span> <span class="hljs-attr">0</span>;
-}
-```
-</span></span></code></pre>
-<p>&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x591A;&#x884C;&#x4EE3;&#x7801;&#x5757;&#x53F3;&#x4E0A;&#x89D2;&#x5E26;&#x6709;&#x201C;&#x590D;&#x5236;&#x201D;&#x6309;&#x94AE;&#x3002;&#x70B9;&#x51FB;&#x540E;&#x4F1A;&#x590D;&#x5236;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x77ED;&#x6682;&#x663E;&#x793A;
-&#x201C;&#x5DF2;&#x590D;&#x5236;&#x201D;&#x72B6;&#x6001;&#x3002;</p>
-<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;memory&gt;</span></span>
-
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;nav2_lifecycle_manager/lifecycle_manager.hpp&quot;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rclcpp/rclcpp.hpp&quot;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> ** argv)</span>
-</span>{
   rclcpp::init(argc, argv);
-  <span class="hljs-keyword">auto</span> node = <span class="hljs-built_in">std</span>::make_shared&lt;nav2_lifecycle_manager::LifecycleManager&gt;();
+  auto node = std::make<span class="hljs-emphasis">_shared&lt;nav2_</span>lifecycle_manager::LifecycleManager&gt;();
   rclcpp::spin(node);
   rclcpp::shutdown();
 
-  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  return 0;
 }
+<span class="hljs-code">```</span>
 </code></pre>
+<p>&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x591A;&#x884C;&#x4EE3;&#x7801;&#x5757;&#x53F3;&#x4E0A;&#x89D2;&#x5E26;&#x6709;&#x201C;&#x590D;&#x5236;&#x201D;&#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x540E;&#x4F1A;&#x590D;&#x5236;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x77ED;&#x6682;&#x663E;&#x793A;
+&#x201C;&#x5DF2;&#x590D;&#x5236;&#x201D;&#x72B6;&#x6001;&#x3002;</p>
 
                                 
                                 </section>
@@ -393,7 +504,7 @@ int main()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"指导手册","level":"1.2","depth":1,"next":{"title":"01 ROS 2 基础","level":"1.3","depth":1,"path":"01_ROS2基础/README.md","ref":"./01_ROS2基础/README.md","articles":[]},"previous":{"title":"首页","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","file-navigation","code-copy"],"root":"./src","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"file-navigation":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"code-copy":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"wanzhen.yang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ROS2笔记","language":"zh-hans","gitbook":"*","description":"ROS 2 与 Navigation2 学习笔记"},"file":{"path":"指导手册.md","mtime":"2026-10-15T15:36:28.473Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-15T16:01:24.863Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"指导手册","level":"1.2","depth":1,"next":{"title":"01 ROS 2 基础","level":"1.3","depth":1,"path":"01_ROS2基础/README.md","ref":"./01_ROS2基础/README.md","articles":[]},"previous":{"title":"首页","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","file-navigation","code-copy"],"root":"./src","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"file-navigation":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"code-copy":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"wanzhen.yang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ROS2笔记","language":"zh-hans","gitbook":"*","description":"ROS 2 与 Navigation2 学习笔记"},"file":{"path":"指导手册.md","mtime":"2026-10-26T14:22:24.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-26T14:28:17.513Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
