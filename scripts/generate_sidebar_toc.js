@@ -37,7 +37,7 @@ function headingSlug(text) {
     .toLowerCase();
 }
 
-// 扫描 Markdown 中的二、三、四级标题，并忽略代码块中的伪标题。
+// 扫描 Markdown 中的二、三级标题，并忽略代码块中的伪标题。
 function extractHeadings(markdown) {
   const headings = [];
   let fence = null;
@@ -59,8 +59,8 @@ function extractHeadings(markdown) {
       return;
     }
 
-    // 一级标题是页面名称，不重复放进子目录；五级以后不加入侧边栏。
-    const match = line.match(/^(#{2,4})\s+(.+?)\s*#*\s*$/);
+    // 一级标题是页面名称；四级及更深标题不加入侧边栏。
+    const match = line.match(/^(#{2,3})\s+(.+?)\s*#*\s*$/);
     if (!match) {
       return;
     }
@@ -136,7 +136,7 @@ function generateSummary() {
 
     const headings = extractHeadings(fs.readFileSync(pagePath, 'utf8'));
 
-    // 标题级别决定缩进：##、###、#### 分别对应一、二、三级子目录。
+    // 标题级别决定缩进：##、### 分别对应一、二级子目录。
     output.push(`${baseIndent}  <!-- AUTO_TOC_START -->`);
     headings.forEach((heading) => {
       const indent = baseIndent + '  '.repeat(heading.level - 1);

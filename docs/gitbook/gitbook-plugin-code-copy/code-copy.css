@@ -2,12 +2,43 @@
   position: relative;
 }
 
-.markdown-section .code-copy-button {
+.markdown-section pre.code-with-line-numbers {
+  padding-left: 4.2em;
+}
+
+.markdown-section .code-line-numbers {
+  position: absolute;
+  top: 0.85em;
+  left: 0;
+  box-sizing: border-box;
+  width: 3.3em;
+  padding-right: 0.8em;
+  border-right: 1px solid #e1e4e8;
+  color: #999;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.85em;
+  line-height: inherit;
+  text-align: right;
+  white-space: pre;
+  user-select: none;
+  pointer-events: none;
+}
+
+.markdown-section pre.code-collapsible {
+  max-height: 360px;
+  overflow: auto;
+}
+
+.markdown-section pre.code-collapsible.code-expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.markdown-section .code-copy-button,
+.markdown-section .code-collapse-button {
   position: absolute;
   top: 6px;
-  right: 6px;
   z-index: 1;
-  padding: 3px 9px;
   border: 1px solid #d0d7de;
   border-radius: 4px;
   color: #555;
@@ -20,12 +51,30 @@
   transition: opacity 0.15s ease;
 }
 
+.markdown-section .code-copy-button {
+  right: 6px;
+  min-width: 54px;
+  padding: 3px 9px;
+}
+
+.markdown-section .code-collapse-button {
+  right: 68px;
+  width: 28px;
+  padding: 2px 0;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
 .markdown-section pre:hover .code-copy-button,
-.markdown-section .code-copy-button:focus {
+.markdown-section .code-copy-button:focus,
+.markdown-section pre:hover .code-collapse-button,
+.markdown-section .code-collapse-button:focus {
   opacity: 1;
 }
 
-.markdown-section .code-copy-button:hover {
+.markdown-section .code-copy-button:hover,
+.markdown-section .code-collapse-button:hover {
   color: #222;
   background: #fff;
 }
@@ -35,7 +84,8 @@
 }
 
 @media (hover: none) {
-  .markdown-section .code-copy-button {
+  .markdown-section .code-copy-button,
+  .markdown-section .code-collapse-button {
     opacity: 1;
   }
 }

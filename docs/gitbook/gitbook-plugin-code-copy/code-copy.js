@@ -1,6 +1,8 @@
 require(["gitbook"], function (gitbook) {
   "use strict";
 
+  var MIN_COLLAPSIBLE_LINES = 8;
+
   function fallbackCopy(text) {
     var textarea = document.createElement("textarea");
 
@@ -41,6 +43,31 @@ require(["gitbook"], function (gitbook) {
     showResult(button, fallbackCopy(text));
   }
 
+  function toggleCode(button, container) {
+    var expanded = container.classList.toggle("code-expanded");
+
+    button.textContent = expanded ? "−" : "+";
+    button.setAttribute("aria-expanded", expanded ? "true" : "false");
+    button.setAttribute("aria-label", expanded ? "折叠代码" : "展开代码");
+    button.title = expanded ? "折叠代码" : "展开代码";
+  }
+
+  function addLineNumbers(container, lineCount) {
+    var numbers = [];
+    var gutter = document.createElement("span");
+    var line;
+
+    for (line = 1; line <= lineCount; line += 1) {
+      numbers.push(String(line));
+    }
+
+    gutter.className = "code-line-numbers";
+    gutter.textContent = numbers.join("\n");
+    gutter.setAttribute("aria-hidden", "true");
+    container.classList.add("code-with-line-numbers");
+    container.insertBefore(gutter, container.firstChild);
+  }
+
   function addCopyButtons() {
     var blocks = document.querySelectorAll(".markdown-section pre > code");
 
@@ -61,6 +88,31 @@ require(["gitbook"], function (gitbook) {
       });
 
       container.setAttribute("data-code-copy-ready", "true");
+
+      var codeText = code.textContent.replace(/\n$/, "");
+      var lineCount = codeText ? codeText.split("\n").length : 0;
+
+      if (lineCount > 0) {
+        addLineNumbers(container, lineCount);
+      }
+
+      if (lineCount >= MIN_COLLAPSIBLE_LINES) {
+        var collapseButton = document.createElement("button");
+
+        container.classList.add("code-collapsible");
+        collapseButton.type = "button";
+        collapseButton.className = "code-collapse-button";
+        collapseButton.textContent = "+";
+        collapseButton.setAttribute("aria-expanded", "false");
+        collapseButton.setAttribute("aria-label", "展开代码");
+        collapseButton.title = "展开代码";
+        collapseButton.addEventListener("click", function () {
+          toggleCode(collapseButton, container);
+        });
+
+        container.appendChild(collapseButton);
+      }
+
       container.appendChild(button);
     });
   }
