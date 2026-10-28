@@ -1,0 +1,99 @@
+/* 在默认 800px 与宽屏 1200px 之间取折中值。 */
+.page-inner {
+  max-width: 1000px;
+}
+
+/*
+ * GitBook 默认让左右导航链接从正文顶部延伸到页面底部，导致远离箭头的
+ * 空白区域也能触发跳转。桌面端把实际点击范围缩小到箭头周围。
+ */
+@media (min-width: 1241px) {
+  .navigation {
+    top: 50%;
+    bottom: auto;
+    width: 64px;
+    min-width: 64px;
+    max-width: 64px;
+    height: 100px;
+    transform: translateY(-50%);
+  }
+}
+
+/*
+ * 默认 Light 模式采用接近 VS Code“浅色（Visual Studio）”的代码配色。
+ * 旧版 GitBook 使用 Highlight.js，分类精度与 VS Code 不完全相同，
+ * 但关键字、字符串、注释、数字、类型和函数名使用相同的主色。
+ * color-theme-1/2 分别保留 GitBook 原有的护眼色和夜间配色。
+ */
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section .code-block-wrapper pre {
+  color: #000;
+  background: #f7f7f7;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section pre > code {
+  color: #000;
+  background: transparent;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section .code-line-numbers {
+  color: #237893;
+  border-right-color: #e5e5e5;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section :is(.hljs-comment, .hljs-quote) {
+  color: #008000 !important;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section :is(
+    .hljs-keyword,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-meta-keyword,
+    .hljs-selector-tag
+  ) {
+  color: #0000ff !important;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section :is(
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-symbol,
+    .hljs-template-tag,
+    .hljs-template-variable
+  ) {
+  color: #a31515 !important;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section .hljs-number {
+  color: #098658 !important;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section :is(
+    .hljs-type,
+    .hljs-built_in,
+    .hljs-class .hljs-title
+  ) {
+  color: #267f99 !important;
+}
+
+.book:not(.color-theme-1):not(.color-theme-2)
+  .markdown-section :is(
+    .hljs-function .hljs-title,
+    .hljs-section
+  ) {
+  color: #795e26 !important;
+}
+
+@media (max-width: 700px) {
+  .page-inner {
+    max-width: 100%;
+  }
+}

@@ -18,13 +18,32 @@ require(["gitbook"], function (gitbook) {
     return copied;
   }
 
+  function setCopyButtonState(button, state) {
+    var iconName = "fa-copy";
+    var label = "复制代码";
+
+    if (state === "success") {
+      iconName = "fa-check";
+      label = "已复制";
+    } else if (state === "failed") {
+      iconName = "fa-exclamation-triangle";
+      label = "复制失败";
+    }
+
+    button.innerHTML = '<i class="fa ' + iconName + '" aria-hidden="true"></i>';
+    button.setAttribute("aria-label", label);
+    button.title = label;
+  }
+
   function showResult(button, copied) {
-    button.textContent = copied ? "已复制" : "复制失败";
+    setCopyButtonState(button, copied ? "success" : "failed");
     button.classList.toggle("code-copy-failed", !copied);
+    button.classList.toggle("code-copy-success", copied);
 
     window.setTimeout(function () {
-      button.textContent = "复制";
+      setCopyButtonState(button, "default");
       button.classList.remove("code-copy-failed");
+      button.classList.remove("code-copy-success");
     }, 1500);
   }
 
@@ -68,6 +87,20 @@ require(["gitbook"], function (gitbook) {
     container.insertBefore(gutter, container.firstChild);
   }
 
+  function wrapCodeBlock(container) {
+    var parent = container.parentNode;
+
+    if (parent && parent.classList.contains("code-block-wrapper")) {
+      return parent;
+    }
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "code-block-wrapper";
+    parent.insertBefore(wrapper, container);
+    wrapper.appendChild(container);
+    return wrapper;
+  }
+
   function addCopyButtons() {
     var blocks = document.querySelectorAll(".markdown-section pre > code");
 
@@ -78,11 +111,13 @@ require(["gitbook"], function (gitbook) {
         return;
       }
 
+      // 按钮放在代码滚动区域之外，避免上下或左右滚动代码时一起消失。
+      var wrapper = wrapCodeBlock(container);
+
       var button = document.createElement("button");
       button.type = "button";
       button.className = "code-copy-button";
-      button.textContent = "复制";
-      button.setAttribute("aria-label", "复制代码");
+      setCopyButtonState(button, "default");
       button.addEventListener("click", function () {
         copyCode(button, code);
       });
@@ -110,10 +145,10 @@ require(["gitbook"], function (gitbook) {
           toggleCode(collapseButton, container);
         });
 
-        container.appendChild(collapseButton);
+        wrapper.appendChild(collapseButton);
       }
 
-      container.appendChild(button);
+      wrapper.appendChild(button);
     });
   }
 

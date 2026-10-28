@@ -1,9 +1,21 @@
-.markdown-section pre {
+.markdown-section .code-block-wrapper {
   position: relative;
+  margin-bottom: 1.275em;
+}
+
+.markdown-section .code-block-wrapper pre {
+  position: relative;
+  margin-bottom: 0;
 }
 
 .markdown-section pre.code-with-line-numbers {
   padding-left: 4.2em;
+}
+
+/* GitBook 默认将 code 显示为 inline，连续空行可能不产生完整行高，
+ * 导致代码与独立行号栏逐渐错位。改为 block 后每个空行都会正常占位。 */
+.markdown-section pre.code-with-line-numbers > code {
+  display: block;
 }
 
 .markdown-section .code-line-numbers {
@@ -53,22 +65,25 @@
 
 .markdown-section .code-copy-button {
   right: 6px;
-  min-width: 54px;
-  padding: 3px 9px;
+  width: 32px;
+  padding: 2px 0;
+  font-size: 16px;
 }
 
 .markdown-section .code-collapse-button {
-  right: 68px;
+  right: 44px;
   width: 28px;
   padding: 2px 0;
   font-size: 18px;
   font-weight: bold;
-  opacity: 0.8;
 }
 
-.markdown-section pre:hover .code-copy-button,
-.markdown-section .code-copy-button:focus,
-.markdown-section pre:hover .code-collapse-button,
+.markdown-section .code-block-wrapper:hover .code-copy-button,
+.markdown-section .code-copy-button:focus {
+  opacity: 0.65;
+}
+
+.markdown-section .code-block-wrapper:hover .code-collapse-button,
 .markdown-section .code-collapse-button:focus {
   opacity: 1;
 }
@@ -81,6 +96,10 @@
 
 .markdown-section .code-copy-button.code-copy-failed {
   color: #b31d28;
+}
+
+.markdown-section .code-copy-button.code-copy-success {
+  color: #22863a;
 }
 
 @media (hover: none) {
