@@ -1,0 +1,10 @@
+{
+  "name": "gitbook-plugin-image-zoom",
+  "version": "1.0.0",
+  "description": "Add a local lightbox with zoom and pan to GitBook content images.",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "gitbook": ">=3.0.0"
+  }
+}

@@ -5,6 +5,7 @@
   "dependencies": {
     "gitbook-plugin-code-copy": "file:plugins/gitbook-plugin-code-copy",
     "gitbook-plugin-expandable-chapters": "0.2.0",
-    "gitbook-plugin-file-navigation": "file:plugins/gitbook-plugin-file-navigation"
+    "gitbook-plugin-file-navigation": "file:plugins/gitbook-plugin-file-navigation",
+    "gitbook-plugin-image-zoom": "file:plugins/gitbook-plugin-image-zoom"
   }
 }

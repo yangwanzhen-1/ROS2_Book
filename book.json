@@ -10,6 +10,7 @@
   "plugins": [
     "expandable-chapters",
     "file-navigation",
-    "code-copy"
+    "code-copy",
+    "image-zoom"
   ]
 }

@@ -1,0 +1,110 @@
+.markdown-section img.image-zoom-source {
+  cursor: zoom-in;
+}
+
+body.image-zoom-open {
+  overflow: hidden;
+}
+
+.image-zoom-overlay {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.86);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.image-zoom-overlay.image-zoom-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-zoom-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: calc(100vw - 80px);
+  max-height: calc(100vh - 80px);
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+.image-zoom-preview.image-zoom-dragging {
+  cursor: grabbing;
+}
+
+.image-zoom-close {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 22px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.38);
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 38px;
+  text-align: center;
+}
+
+.image-zoom-close:hover,
+.image-zoom-close:focus {
+  border-color: #fff;
+  background: rgba(0, 0, 0, 0.68);
+  outline: none;
+}
+
+.image-zoom-hint {
+  position: absolute;
+  z-index: 2;
+  bottom: 18px;
+  left: 50%;
+  margin: 0;
+  padding: 7px 12px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(0, 0, 0, 0.42);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .image-zoom-preview {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 80px);
+  }
+
+  .image-zoom-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .image-zoom-hint {
+    bottom: 12px;
+    max-width: calc(100vw - 24px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
